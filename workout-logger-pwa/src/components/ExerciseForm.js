@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
-const ExerciseForm = ({ workoutData = {}, selectedDay, onSave }) => {
+const ExerciseForm = ({ workoutData = [], selectedDay, onSave }) => {
   if (!selectedDay) return null;
 
-  const exercises = workoutData[selectedDay]?.exercises || [];
+  const selectedWorkout = workoutData.find(w => w.day === selectedDay);
+  const exercises = selectedWorkout?.exercises || [];
   const [performanceData, setPerformanceData] = useState({});
 
   console.log('selectedDay:', selectedDay);
@@ -31,8 +32,12 @@ const ExerciseForm = ({ workoutData = {}, selectedDay, onSave }) => {
         <div key={exercise.name} className="bg-gray-700 p-4 md:p-8 rounded-lg shadow-inner">
           <h3 className="text-lg md:text-xl font-bold text-white mb-2">{exercise.name}</h3>
           <div className="flex flex-col md:flex-row justify-between text-xs md:text-sm text-gray-400 mb-4 md:mb-6">
-            <span className="font-semibold mb-1 md:mb-0">Series Objetivo: <span className="text-indigo-300">{exercise.targetSets}</span></span>
-            <span className="font-semibold">Repeticiones Objetivo: <span className="text-indigo-300">{exercise.targetReps}</span></span>
+            <span className="font-semibold mb-1 md:mb-0">
+              Series Objetivo: <span className="text-indigo-300">{exercise.targetSets}</span>
+            </span>
+            <span className="font-semibold">
+              Repeticiones Objetivo: <span className="text-indigo-300">{exercise.targetReps}</span>
+            </span>
           </div>
           <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
             <div className="flex-1">

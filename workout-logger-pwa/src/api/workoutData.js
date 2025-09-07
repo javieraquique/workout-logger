@@ -5,13 +5,11 @@ import { collection, getDocs, addDoc, Timestamp } from "firebase/firestore";
 export const getWorkoutData = async () => {
   const colRef = collection(db, "workouts");
   const snapshot = await getDocs(colRef);
-  // You can structure your data as needed
-  return snapshot.docs.map(doc => doc.data());
+  return snapshot.docs.map(doc => doc.data()); // Each doc should have a `day` field
 };
 
 // Save workout performance
 export const saveWorkoutData = async (data) => {
-  // Add a timestamp field for logging
   await addDoc(collection(db, "activityLog"), {
     ...data,
     timestamp: Timestamp.now()

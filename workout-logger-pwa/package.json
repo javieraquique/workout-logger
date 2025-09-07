@@ -1,8 +1,7 @@
 {
   "name": "workout-logger-pwa",
   "version": "1.0.0",
-  "description": "A Progressive Web App for logging workout performance and interacting with Google Sheets.",
-  "main": "src/App.js",
+  "description": "A Progressive Web App for logging workout performance and interacting with Google Sheets.", 
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -18,8 +17,8 @@
     "react-scripts": "^5.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.7",
-    "postcss": "^8.3.6",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
     "tailwindcss": "^2.2.19"
   },
   "homepage": ".",

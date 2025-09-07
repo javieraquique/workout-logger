@@ -1,6 +1,5 @@
 module.exports = {
-  purge: ['./public/index.html', './src/**/*.{js,jsx,ts,tsx}', './src/styles/**/*.{css}'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./public/index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -12,9 +11,6 @@ module.exports = {
         '4xl': '2rem',
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };
